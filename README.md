@@ -1,16 +1,15 @@
-# coronavirus_rest_api_flutter_course
+# Coronavirus REST API Flutter Course
 
-A new Flutter project.
+[![Language](https://img.shields.io/badge/dart-2.12.0-informational.svg)](https://dart.dev/)
 
-## Getting Started
+Código-fonte do curso [Coronavirus REST API Flutter Course on Teachable](https://courses.codewithandrea.com/p/flutter-rest-api-course-build-a-coronavirus-tracking-app).
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Nota sobre arquivos em .gitignore
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Os arquivos a seguir contêm chaves de API e não estão incluídos no repositório:
+- `.vscode/settings.json`
+- `lib/app/services/api_keys.dart`
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screen Shot 2021-06-01 at 7 36 37 PM](https://user-images.githubusercontent.com/72803395/120401319-14c3b880-c316-11eb-9a1a-c88c7d71680d.png)
+
