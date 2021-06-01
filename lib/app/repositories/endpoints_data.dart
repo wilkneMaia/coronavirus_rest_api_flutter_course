@@ -8,8 +8,8 @@ class EndpointsData {
   EndpointData get cases => values[Endpoint.cases];
   EndpointData get casesSuspected => values[Endpoint.casesSuspected];
   EndpointData get casesConfirmed => values[Endpoint.casesConfirmed];
-  EndpointData get deaths => values[Endpoint.deaths];
   EndpointData get recovered => values[Endpoint.recovered];
+  EndpointData get deaths => values[Endpoint.deaths];
 
   @override
   String toString() =>

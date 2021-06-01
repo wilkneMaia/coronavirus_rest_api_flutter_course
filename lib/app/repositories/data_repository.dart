@@ -55,17 +55,17 @@ class DataRepository {
       apiService.getEndpointData(
           accessToken: _accessToken, endpoint: Endpoint.casesConfirmed),
       apiService.getEndpointData(
-          accessToken: _accessToken, endpoint: Endpoint.deaths),
-      apiService.getEndpointData(
           accessToken: _accessToken, endpoint: Endpoint.recovered),
+      apiService.getEndpointData(
+          accessToken: _accessToken, endpoint: Endpoint.deaths),
     ]);
     return EndpointsData(
       values: {
         Endpoint.cases: values[0],
         Endpoint.casesSuspected: values[1],
         Endpoint.casesConfirmed: values[2],
-        Endpoint.deaths: values[3],
-        Endpoint.recovered: values[4],
+        Endpoint.recovered: values[3],
+        Endpoint.deaths: values[4],
       },
     );
   }

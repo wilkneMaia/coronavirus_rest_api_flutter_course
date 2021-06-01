@@ -5,8 +5,8 @@ enum Endpoint {
   cases,
   casesSuspected,
   casesConfirmed,
-  deaths,
   recovered,
+  deaths,
 }
 
 class API {
@@ -33,7 +33,7 @@ class API {
     Endpoint.cases: 'cases',
     Endpoint.casesSuspected: 'casesSuspected',
     Endpoint.casesConfirmed: 'casesConfirmed',
-    Endpoint.deaths: 'deaths',
     Endpoint.recovered: 'recovered',
+    Endpoint.deaths: 'deaths',
   };
 }
