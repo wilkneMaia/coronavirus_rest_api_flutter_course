@@ -23,10 +23,10 @@ class API {
         path: 'token',
       );
 
-  Uri endpointUri(Endpoint endPoint) => Uri(
+  Uri endpointUri(Endpoint endpoint) => Uri(
         scheme: 'https',
         host: host,
-        path: _paths[endPoint],
+        path: _paths[endpoint],
       );
 
   static Map<Endpoint, String> _paths = {

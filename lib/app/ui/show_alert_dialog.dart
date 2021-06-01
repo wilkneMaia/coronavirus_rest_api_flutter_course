@@ -17,25 +17,25 @@ Future<void> showAlertDialog({
         content: Text(content),
         actions: <Widget>[
           CupertinoDialogAction(
-            onPressed: () => Navigator.of(context).pop(),
             child: Text(defaultActionText),
-          )
-        ],
-      ),
-    );
-  } else {
-    return await showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(title),
-        content: Text(content),
-        actions: <Widget>[
-          TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: Text(defaultActionText),
-          )
+          ),
         ],
       ),
     );
   }
+
+  return await showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text(title),
+      content: Text(content),
+      actions: <Widget>[
+        TextButton(
+          child: Text(defaultActionText),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+      ],
+    ),
+  );
 }

@@ -18,9 +18,9 @@ class EndpointCard extends StatelessWidget {
     Endpoint.cases:
         EndpointCardData('Cases', 'assets/count.png', Color(0xFFFFF492)),
     Endpoint.casesSuspected: EndpointCardData(
-        'Cases suspected', 'assets/suspect.png', Color(0xFFEEDA28)),
+        'Suspected cases', 'assets/suspect.png', Color(0xFFEEDA28)),
     Endpoint.casesConfirmed: EndpointCardData(
-        'Cases Confirmed', 'assets/fever.png', Color(0xFFE99600)),
+        'Confirmed cases', 'assets/fever.png', Color(0xFFE99600)),
     Endpoint.deaths:
         EndpointCardData('Deaths', 'assets/death.png', Color(0xFFE40000)),
     Endpoint.recovered:
@@ -38,22 +38,19 @@ class EndpointCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final cardData = _cardsData[endpoint];
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8,
-        vertical: 4,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 8,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
                 cardData.title,
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline5
+                    .copyWith(color: cardData.color),
               ),
               SizedBox(height: 4),
               SizedBox(
@@ -66,9 +63,7 @@ class EndpointCard extends StatelessWidget {
                     Text(
                       formattedValue,
                       style: Theme.of(context).textTheme.headline4.copyWith(
-                            color: cardData.color,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          color: cardData.color, fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),

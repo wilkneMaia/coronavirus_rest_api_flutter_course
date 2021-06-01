@@ -16,9 +16,8 @@ class LastUpdatedDateFormatter {
 }
 
 class LastUpdatedStatusText extends StatelessWidget {
-  const LastUpdatedStatusText({Key key, this.text}) : super(key: key);
+  const LastUpdatedStatusText({Key key, @required this.text}) : super(key: key);
   final String text;
-
   @override
   Widget build(BuildContext context) {
     return Padding(

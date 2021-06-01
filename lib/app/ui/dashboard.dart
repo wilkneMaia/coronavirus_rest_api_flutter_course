@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:coronavirus_rest_api_flutter_course/app/repositories/data_repository.dart';
 import 'package:coronavirus_rest_api_flutter_course/app/repositories/endpoints_data.dart';
 import 'package:coronavirus_rest_api_flutter_course/app/services/api.dart';
@@ -8,6 +6,7 @@ import 'package:coronavirus_rest_api_flutter_course/app/ui/last_updated_status_t
 import 'package:coronavirus_rest_api_flutter_course/app/ui/show_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'dart:io';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -20,6 +19,8 @@ class _DashboardState extends State<Dashboard> {
   @override
   void initState() {
     super.initState();
+    final dataRepository = Provider.of<DataRepository>(context, listen: false);
+    _endpointsData = dataRepository.getAllEndpointsCachedData();
     _updateData();
   }
 
@@ -50,7 +51,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     final formatter = LastUpdatedDateFormatter(
       lastUpdated: _endpointsData != null
-          ? _endpointsData.values[Endpoint.cases].date
+          ? _endpointsData.values[Endpoint.cases]?.date
           : null,
     );
     return Scaffold(
@@ -68,7 +69,7 @@ class _DashboardState extends State<Dashboard> {
               EndpointCard(
                 endpoint: endpoint,
                 value: _endpointsData != null
-                    ? _endpointsData.values[endpoint].value
+                    ? _endpointsData.values[endpoint]?.value
                     : null,
               ),
           ],
