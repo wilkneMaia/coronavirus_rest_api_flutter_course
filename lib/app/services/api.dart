@@ -1,7 +1,7 @@
 import 'package:coronavirus_rest_api_flutter_course/app/services/api_keys.dart';
 import 'package:flutter/foundation.dart';
 
-enum EndPoint {
+enum Endpoint {
   cases,
   casesSuspected,
   casesConfirmed,
@@ -23,17 +23,17 @@ class API {
         path: 'token',
       );
 
-  Uri endpointUri(EndPoint endPoint) => Uri(
+  Uri endpointUri(Endpoint endPoint) => Uri(
         scheme: 'https',
         host: host,
         path: _paths[endPoint],
       );
 
-  static Map<EndPoint, String> _paths = {
-    EndPoint.cases: 'cases',
-    EndPoint.casesSuspected: 'casesSuspected',
-    EndPoint.casesConfirmed: 'casesConfirmed',
-    EndPoint.deaths: 'deaths',
-    EndPoint.recovered: 'recovered',
+  static Map<Endpoint, String> _paths = {
+    Endpoint.cases: 'cases',
+    Endpoint.casesSuspected: 'casesSuspected',
+    Endpoint.casesConfirmed: 'casesConfirmed',
+    Endpoint.deaths: 'deaths',
+    Endpoint.recovered: 'recovered',
   };
 }
